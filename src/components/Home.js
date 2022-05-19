@@ -55,12 +55,14 @@ export default function Home() {
           src={user.photoURL}
           className="w-10 h-10 rounded-full"
         />
+         <a href="https://www.systemsorion.com/Desperdicios/vistas/indexPrincipal.php"> Sistemas de desperdicio</a>
         <button
           className="bg-blue-400 rounded py-1 px-1 flex flex-row-reverse"
           onClick={handleLogout}
         >
           cerar sesion
         </button>
+       
 
         
       </div>
