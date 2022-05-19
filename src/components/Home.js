@@ -55,7 +55,7 @@ export default function Home() {
           src={user.photoURL}
           className="w-10 h-10 rounded-full"
         />
-        <a href="https://www.systemsorion.com/Desperdicios/vistas/indexPrincipal.php">
+        <a className="bg-blue-200 text-blue"  href="https://www.systemsorion.com/Desperdicios/vistas/indexPrincipal.php">
           {" "}
           Sistemas de desperdicio
         </a>
