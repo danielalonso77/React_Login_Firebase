@@ -55,21 +55,20 @@ export default function Home() {
           src={user.photoURL}
           className="w-10 h-10 rounded-full"
         />
-         <a href="https://www.systemsorion.com/Desperdicios/vistas/indexPrincipal.php"> Sistemas de desperdicio</a>
+        <a href="https://www.systemsorion.com/Desperdicios/vistas/indexPrincipal.php">
+          {" "}
+          Sistemas de desperdicio
+        </a>
         <button
           className="bg-blue-400 rounded py-1 px-1 flex flex-row-reverse"
           onClick={handleLogout}
         >
           cerar sesion
         </button>
-       
-
-        
       </div>
       <div>
-      <iframe
-        
-        className="w-full h-full"
+        <iframe
+          className="w-full h-full"
           src="https://docs.google.com/spreadsheets/d/e/2PACX-1vROTxB__Qy90_0nFS0MGAu4gWpp386rv0yPLNoNckj8oXPuiPeyXRDA_aw0tGqiSgXnWzVMYbXGQ0Yg/pubchart?oid=356344706"
           frormat="interactive"
           frameBorder="0"
@@ -78,5 +77,3 @@ export default function Home() {
     </>
   );
 }
-
-
