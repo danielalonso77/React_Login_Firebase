@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/React_Login_Firebase/static/css/main.5b61d523.css",
+    "main.js": "/React_Login_Firebase/static/js/main.8b16c440.js",
+    "static/js/787.1f67a523.chunk.js": "/React_Login_Firebase/static/js/787.1f67a523.chunk.js",
+    "static/media/logo_GO.png": "/React_Login_Firebase/static/media/logo_GO.e98429196058f6de750a.png",
+    "index.html": "/React_Login_Firebase/index.html",
+    "main.5b61d523.css.map": "/React_Login_Firebase/static/css/main.5b61d523.css.map",
+    "main.8b16c440.js.map": "/React_Login_Firebase/static/js/main.8b16c440.js.map",
+    "787.1f67a523.chunk.js.map": "/React_Login_Firebase/static/js/787.1f67a523.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5b61d523.css",
+    "static/js/main.8b16c440.js"
+  ]
+}
