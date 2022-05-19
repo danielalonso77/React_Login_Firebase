@@ -47,7 +47,7 @@ export default function Home() {
 
   return (
     <>
-      <div className="  ">
+      <div className="">
         <img src={image} alt="google" className="w-10 h-10" />
         <p>Hola {user.displayName || user.email}</p>
         <img
