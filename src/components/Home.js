@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/iframe-has-title */
 import React from "react";
-
+import { useNavigate } from "react-router-dom";
 import image from "../logo_GO.png";
 import { useAuth } from "../context/authContext";
 
@@ -8,7 +8,7 @@ export default function Home() {
   /* const authContext = useAuth();
   console.log(authContext); */
 
-  /*  const navigate = useNavigate(); */
+  const navigate = useNavigate(); 
 
   const { user, logout, loading } = useAuth();
   console.log(user);
@@ -26,7 +26,7 @@ export default function Home() {
       <div className="text-center">
         <svg
           role="status"
-          class="inline w-10 h-10 mr-2 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
+          className="inline w-10 h-10 mr-2 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
           viewBox="0 0 100 101"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -50,12 +50,17 @@ export default function Home() {
       <div className="">
         <img src={image} alt="google" className="w-10 h-10" />
         <p>Hola {user.displayName || user.email}</p>
+        {user && user.email.includes("@gmail.com") && (
+          navigate("/login")
+        )
+          
+        }
         <img
           alt="myself"
           src={user.photoURL}
           className="w-10 h-10 rounded-full"
         />
-        <a className="bg-blue-200 text-blue"  href="https://www.systemsorion.com/Desperdicios/vistas/indexPrincipal.php">
+        <a className="bg-blue-200n text-blue"  href="https://www.systemsorion.com/Desperdicios/vistas/indexPrincipal.php">
           {" "}
           Sistemas de desperdicio
         </a>

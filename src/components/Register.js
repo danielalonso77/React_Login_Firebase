@@ -56,8 +56,8 @@ export default function Register() {
                 <div className="form-group">
                   <label
                     for="email"
-                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-                    htmlFor="exampleInputEmail1"
+                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                   
                   >
                     Usuario
                   </label>
@@ -72,7 +72,6 @@ export default function Register() {
                   <label
                     for="password"
                     class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-                    htmlFor="exampleInputPassword1"
                   >
                     Contraseña
                   </label>
@@ -90,13 +89,13 @@ export default function Register() {
                 </button>
               </form>
               <div className="text-center text-gray-600 text-xs">
-                <a
+               {/*  <a
                   className="text-blue-500 hover:text-blue-600"
                   href="#"
                   onClick={() => navigate("/login")}
                 >
                   Ya tengo cuenta, logeame{" "}
-                </a>
+                </a> */}
               </div>
             </div>
           </div>

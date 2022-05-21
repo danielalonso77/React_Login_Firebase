@@ -37,6 +37,8 @@ export default function Login() {
         setError("Todos los campos deben estar llenos");
       } else if (error.code === "auth/invalid-email") {
         setError("El email no es válido");
+      } else if (error.code === "auth/unautorized-domain") {
+        setError("El dominio no está autorizado");
       } else {
         setError(error.message);
       }
@@ -64,19 +66,17 @@ export default function Login() {
           />
           {error && <Alerts message={error} />}
           <div className="bg-white shadow-md rounded px-5 pt-5 pb-5 mb-5">
-            
-             {/*  <h1 className="text-center text-xl font-bold ">INICIA SESIÓN</h1> */}
-              {/* <form className="" onSubmit={handleSubmit}>
+             <h1 className="text-center text-xl font-bold ">INICIA SESIÓN</h1>
+            <form className="" onSubmit={handleSubmit}>
                 <div className="form-group">
                   <label
                     for="email"
-                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-                    htmlFor="exampleInputEmail1"
+                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
                   >
                     Usuario
                   </label>
                   <input
-                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-1 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-1 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     required
                     onChange={handleChange}
                     name="email"
@@ -86,13 +86,13 @@ export default function Login() {
                   <label
                     for="password"
                     class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-                    htmlFor="exampleInputPassword1"
                   >
                     Contraseña
                   </label>
                   <input
-                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-1 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-1 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     onChange={handleChange}
+                    required
                     name="password"
                     type="password"
                     placeholder="Ingrese su contraseña"
@@ -102,9 +102,9 @@ export default function Login() {
                   {" "}
                   Entrar{" "}
                 </button>
-              </form> */}
-              <div>
-               {/*  <div className="text-center text-gray-600 text-xs mb-2">
+              </form>
+            <div>
+              {/*  <div className="text-center text-gray-600 text-xs mb-2">
                   <a
                     href="#"
                     className="text-blue-500 hover:text-blue-600"
@@ -113,40 +113,38 @@ export default function Login() {
                     No tengo cuenta, registrarme
                   </a>
                 </div> */}
-                <button
-                  onClick={handleGoogleSingin}
-                  type="button"
-                  class="text-white bg-[#4285F4] hover:bg-[#4285F4]/90 focus:ring-4 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 mr-4 mb-4"
+              <button
+                onClick={handleGoogleSingin}
+                type="button"
+                className="text-white bg-[#4285F4] hover:bg-[#4285F4]/90 focus:ring-4 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 mr-4 mb-4"
+              >
+                <svg
+                  className="w-4 h-4 mr-2 -ml-1"
+                  aria-hidden="true"
+                  focusable="false"
+                  data-prefix="fab"
+                  data-icon="google"
+                  role="img"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 488 512"
                 >
-                  <svg
-                    class="w-4 h-4 mr-2 -ml-1"
-                    aria-hidden="true"
-                    focusable="false"
-                    data-prefix="fab"
-                    data-icon="google"
-                    role="img"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 488 512"
-                  >
-                    <path
-                      fill="currentColor"
-                      d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"
-                    ></path>
-                  </svg>
-                  Inicia sesion con Google
-                </button>
-              </div>
-            
+                  <path
+                    fill="currentColor"
+                    d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"
+                  ></path>
+                </svg>
+                Inicia sesion con Google
+              </button>
+            </div>
           </div>
           <p style={styles.dark}>
-          {" "}
-          © 2022 Grupo Ortiz: <a href="https://www.grupo-ortiz.com/">
             {" "}
-            GO{" "}
-          </a>{" "}
-        </p>
+            © 2022 Grupo Ortiz: <a href="https://www.grupo-ortiz.com/">
+              {" "}
+              GO{" "}
+            </a>{" "}
+          </p>
         </div>
-        
       </div>
     </div>
   );
