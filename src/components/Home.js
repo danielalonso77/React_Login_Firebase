@@ -1,14 +1,16 @@
 /* eslint-disable jsx-a11y/iframe-has-title */
 import React from "react";
-import { useNavigate } from "react-router-dom";
+/* import { useNavigate } from "react-router-dom"; */
 import image from "../logo_GO.png";
 import { useAuth } from "../context/authContext";
+
+
 
 export default function Home() {
   /* const authContext = useAuth();
   console.log(authContext); */
 
-  const navigate = useNavigate(); 
+  /* const navigate = useNavigate(); */
 
   const { user, logout, loading } = useAuth();
   console.log(user);
@@ -26,7 +28,7 @@ export default function Home() {
       <div className="text-center">
         <svg
           role="status"
-          className="inline w-10 h-10 mr-2 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
+          className=""
           viewBox="0 0 100 101"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -47,31 +49,28 @@ export default function Home() {
 
   return (
     <>
+    
       <div className="">
-        <img src={image} alt="google" className="w-10 h-10" />
-        <p>Hola {user.displayName || user.email}</p>
-        {user && user.email.includes("@gmail.com") && (
-          navigate("/login")
-        )
-          
-        }
+      
+        <img src={image} alt="google" className="w-10 h-10 felx items-left" />
+        <p>Hola {user.displayName.split(" ", [1]) || user.email}</p>
+        <div className=" " >
         <img
           alt="myself"
           src={user.photoURL}
-          className="w-10 h-10 rounded-full"
+          className=""
         />
-        <a className="bg-blue-200n text-blue"  href="https://www.systemsorion.com/Desperdicios/vistas/indexPrincipal.php">
+        {/* <a className="bg-blue-200n text-blue"  href="https://www.systemsorion.com/Desperdicios/vistas/indexPrincipal.php">
           {" "}
           Sistemas de desperdicio
-        </a>
-        <button
-          className="bg-blue-400 rounded py-1 px-1 flex flex-row-reverse"
-          onClick={handleLogout}
-        >
+        </a> */}
+        <button className=" " onClick={handleLogout}>
           cerar sesion
         </button>
+        </div>
+        
       </div>
-      <div>
+      <div className=" bg-white w-auto h-96 ">
         <iframe
           className="w-full h-full"
           src="https://docs.google.com/spreadsheets/d/e/2PACX-1vROTxB__Qy90_0nFS0MGAu4gWpp386rv0yPLNoNckj8oXPuiPeyXRDA_aw0tGqiSgXnWzVMYbXGQ0Yg/pubchart?oid=356344706"

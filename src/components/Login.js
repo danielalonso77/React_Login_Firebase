@@ -4,6 +4,8 @@ import { useAuth } from "../context/authContext";
 import image from "../logo_GO.png";
 import Alerts from "../components/Alerts.js";
 
+
+
 export default function Login() {
   const navigate = useNavigate();
 
@@ -66,11 +68,11 @@ export default function Login() {
           />
           {error && <Alerts message={error} />}
           <div className="bg-white shadow-md rounded px-5 pt-5 pb-5 mb-5">
-             <h1 className="text-center text-xl font-bold ">INICIA SESIÓN</h1>
+            {/*  <h1 className="text-center text-xl font-bold ">INICIA SESIÓN</h1>
             <form className="" onSubmit={handleSubmit}>
                 <div className="form-group">
                   <label
-                    for="email"
+                    htmlFor="email"
                     className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
                   >
                     Usuario
@@ -84,8 +86,8 @@ export default function Login() {
                     placeholder="Ingrese su usuario"
                   />
                   <label
-                    for="password"
-                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                    htmlFor="password"
+                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
                   >
                     Contraseña
                   </label>
@@ -102,7 +104,7 @@ export default function Login() {
                   {" "}
                   Entrar{" "}
                 </button>
-              </form>
+              </form> */}
             <div>
               {/*  <div className="text-center text-gray-600 text-xs mb-2">
                   <a

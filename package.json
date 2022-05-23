@@ -1,6 +1,6 @@
 {
   "name": "login-firebase-auth",
-  "homepage":"https://danielalonso77.github.io/React_Login_Firebase/",
+  "homepage": "https://danielalonso77.github.io/React_Login_Firebase/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -11,6 +11,8 @@
     "eslint-config-react-app": "^6.0.0",
     "firebase": "^9.8.1",
     "gh-pages": "^4.0.0",
+    "headlessui": "^0.0.0",
+    "heroicons": "^1.0.6",
     "react": "^18.1.0",
     "react-bootstrap": "^2.4.0",
     "react-dom": "^18.1.0",

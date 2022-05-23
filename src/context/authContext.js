@@ -10,6 +10,7 @@ import {
 } from "firebase/auth";
 import { auth } from "../firebase";
 
+
 export const authContext = createContext();
 
 export const useAuth = () => {
@@ -41,17 +42,21 @@ export function AuthProvider({ children }) {
   useEffect(() => {
     const unSuscribe = onAuthStateChanged(auth, (currentUser) => {
       console.log(currentUser);
+      /* const correo = currentUser.email;
+      console.log(correo); */
       setUser(currentUser);
       setLoading(false);
     });
     return () => unSuscribe();
-  }, []);
+  },[]);
 
   const loginWithGoogle = () =>{
     const googleProvider = new GoogleAuthProvider();
     return signInWithPopup(auth, googleProvider);
+    
   }
 
+ 
   return (
     <authContext.Provider value={{ singup, login, user, logout, loading, loginWithGoogle }}>
       {children}
