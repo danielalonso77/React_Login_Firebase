@@ -1,14 +1,17 @@
-/* eslint-disable jsx-a11y/iframe-has-title */
 import React from "react";
 /* import { useNavigate } from "react-router-dom"; */
+
 import image from "../logo_GO.png";
 import { useAuth } from "../context/authContext";
 
-
+//importcion de los componentes
+/* import Grafica1 from "../graficas/Grafica1";
+import Grafica2 from "../graficas/Grafica2";
+import Grafica3 from "../graficas/Grafica3"; */
 
 export default function Home() {
   /* const authContext = useAuth();
-  console.log(authContext); */
+                console.log(authContext); */
 
   /* const navigate = useNavigate(); */
 
@@ -25,59 +28,60 @@ export default function Home() {
 
   if (loading) {
     return (
-      <div className="text-center">
-        <svg
-          role="status"
-          className=""
-          viewBox="0 0 100 101"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
-            fill="currentColor"
-          />
-          <path
-            d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
-            fill="currentFill"
-          />
-        </svg>
-        Cargando...
+      <div>
+        <h1> Cargando.. </h1>{" "}
       </div>
     );
   }
 
   return (
     <>
-    
-      <div className="">
-      
-        <img src={image} alt="google" className="w-10 h-10 felx items-left" />
-        <p>Hola {user.displayName.split(" ", [1]) || user.email}</p>
-        <div className=" " >
-        <img
-          alt="myself"
-          src={user.photoURL}
-          className=""
-        />
-        {/* <a className="bg-blue-200n text-blue"  href="https://www.systemsorion.com/Desperdicios/vistas/indexPrincipal.php">
-          {" "}
-          Sistemas de desperdicio
-        </a> */}
-        <button className=" " onClick={handleLogout}>
-          cerar sesion
-        </button>
-        </div>
-        
-      </div>
-      <div className=" bg-white w-auto h-96 ">
-        <iframe
-          className="w-full h-full"
-          src="https://docs.google.com/spreadsheets/d/e/2PACX-1vROTxB__Qy90_0nFS0MGAu4gWpp386rv0yPLNoNckj8oXPuiPeyXRDA_aw0tGqiSgXnWzVMYbXGQ0Yg/pubchart?oid=356344706"
-          frormat="interactive"
-          frameBorder="0"
-        ></iframe>
-      </div>
+      <div className="w-full h-full ">
+        <div className="">
+          <div className="items-center d-block sticky  ">
+            
+            <ul className="flex">
+              <li className="mr-6"></li>
+              <li className="mr-6">
+                <img
+                  src={image}
+                  alt="google"
+                  className="w-10 h-10 felx items-left"
+                />
+              </li>{" "}
+              <li className="mr-6">
+                <h1> Grafica1 </h1>{" "}
+              </li>{" "}
+              <li className="mr-6">
+                <h1> Grafica2 </h1>{" "}
+              </li>{" "}
+              <li className="mr-6">
+                <h1> Grafica3 </h1>{" "}
+              </li>{" "}
+              <li className="mr-6">
+                <h1> Grafica4 </h1>{" "}
+              </li>{" "}
+              <li className="mr-6">
+
+                <img
+                  alt="myself"
+                  src={user.photoURL}
+                  className="rounded-full w-10 h-10"
+                />
+                <p> Hola {user.displayName.split(" ", [1]) || user.email} </p>
+                <button className="bg-blue-400 " onClick={handleLogout}>
+                  cerar sesion
+                </button>
+              </li>{" "}
+            </ul>{" "}
+          </div>{" "}
+        </div>{" "}
+      </div>{" "}
+      {/* <a className="bg-blue-200n text-blue"  href="https://www.systemsorion.com/Desperdicios/vistas/indexPrincipal.php">
+                                                                                                                                                                                                                                                  {" "}
+                                                                                                                                                                                                                                                  Sistemas de desperdicio
+                                                                                                                                                                                                                                                </a> */}{" "}
+      <div className="bg-white w-auto h-96 "> </div>{" "}
     </>
   );
 }

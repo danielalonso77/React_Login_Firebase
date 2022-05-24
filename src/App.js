@@ -7,24 +7,34 @@ import Register from "./components/Register";
 import { AuthProvider } from "./context/authContext";
 
 const App = () => {
-  return (
-  
-      <AuthProvider>
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <ProtectedRoutes>
-                <Home />
-              </ProtectedRoutes>
-            }
-          />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-        </Routes>
-      </AuthProvider>
-    
-  );
+    return (
+
+        <
+        AuthProvider >
+        <
+        Routes >
+        <
+        Route path = "/"
+        element = { <
+            ProtectedRoutes >
+            <
+            Home / >
+            <
+            /ProtectedRoutes>
+        }
+        /> <
+        Route path = "/login"
+        element = { < Login / > }
+        /> <
+        Route path = "/register"
+        element = { < Register / > }
+        /> <
+        /Routes> <
+        /AuthProvider>
+
+    );
 };
+
+
 
 export default App;
