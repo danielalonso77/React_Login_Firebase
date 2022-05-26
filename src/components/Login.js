@@ -37,6 +37,8 @@ export default function Login() {
         setError("Todos los campos deben estar llenos");
       } else if (error.code === "auth/invalid-email") {
         setError("El email no es válido");
+      }else if (error.code === "auth/cancelled-popup-reques") {
+        setError("Ventana emergente cerrada");
       } else {
         setError(error.message);
       }
@@ -51,6 +53,9 @@ export default function Login() {
       setError(error.code);
     }
   };
+
+
+
 
   return (
     <div style={styles.center} className="w-full max-w-xs m-auto ">
@@ -116,10 +121,10 @@ export default function Login() {
                 <button
                   onClick={handleGoogleSingin}
                   type="button"
-                  class="text-white bg-[#4285F4] hover:bg-[#4285F4]/90 focus:ring-4 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 mr-4 mb-4"
+                  className="text-white bg-[#4285F4] hover:bg-[#4285F4]/90 focus:ring-4 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 mr-4 mb-4"
                 >
                   <svg
-                    class="w-4 h-4 mr-2 -ml-1"
+                    className="w-4 h-4 mr-2 -ml-1"
                     aria-hidden="true"
                     focusable="false"
                     data-prefix="fab"

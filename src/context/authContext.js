@@ -9,6 +9,7 @@ import {
   signInWithPopup,
 } from "firebase/auth";
 import { auth } from "../firebase";
+import { async } from "@firebase/util";
 
 export const authContext = createContext();
 
@@ -24,8 +25,8 @@ export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  const singup = (email, password) =>
-    createUserWithEmailAndPassword(auth, email, password);
+  const singup = async (email, password) =>
+    await createUserWithEmailAndPassword(auth, email, password);
 
   const login = async (email, password) => {
     const userCredentials = await signInWithEmailAndPassword(
@@ -36,7 +37,7 @@ export function AuthProvider({ children }) {
     console.log(userCredentials);
   };
 
-  const logout = () => signOut(auth);
+  const logout = async () => await signOut(auth);
 
   useEffect(() => {
     const unSuscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -47,9 +48,9 @@ export function AuthProvider({ children }) {
     return () => unSuscribe();
   }, []);
 
-  const loginWithGoogle = () =>{
+  const loginWithGoogle = async () =>{
     const googleProvider = new GoogleAuthProvider();
-    return signInWithPopup(auth, googleProvider);
+    return await signInWithPopup(auth, googleProvider);
   }
 
   return (
